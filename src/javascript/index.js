@@ -155,6 +155,24 @@ $(function () {
 
         });
     }
+
+    function pintarAreaTexto (){
+        $('#concatenarTexto').append($('<label>').text('Area de Texto').attr("for", "areaTexto")).append('<br>')
+        $('#concatenarTexto').append($('<textarea>').attr("cols", 40).attr("rows", 10).attr("id","areaTexto").attr("name","areaTexto")).append('<br>')
+        $('#concatenarTexto').append ($('<button>').text('Duplicar').attr("id","botonDuplicar"))
+
+
+    }
+    pintarAreaTexto()
+
+    function concatenarText (){
+        $('#botonDuplicar').on('click', () => {
+            let cadenaDuplicar = $('#areaTexto').val()
+            cadenaDuplicar += $("#areaTexto").val()
+            $("#areaTexto").val(cadenaDuplicar)
+        })
+    }
+    concatenarText()
     
 
 
